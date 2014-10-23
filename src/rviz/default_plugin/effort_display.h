@@ -625,7 +625,13 @@ protected:
       ++messages_received_;
       setStatus( StatusProperty::Ok, "Topic", QString::number( messages_received_ ) + " messages received" );
 
-      processMessage( msg );
+      last_message_ = *msg;
+      Q_EMIT messageReceived();
+    }
+
+  virtual void _processMessage()
+    {
+      processMessage( sensor_msgs::JointState::ConstPtr(&last_message_) );
     }
 
   /** @brief Implement this to process the contents of a message.
@@ -636,6 +642,7 @@ protected:
   message_filters::Subscriber<sensor_msgs::JointState> sub_;
   tf::MessageFilterJointState* tf_filter_;
   uint32_t messages_received_;
+  sensor_msgs::JointState last_message_;
 };
 } // rviz
 
