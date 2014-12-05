@@ -2,8 +2,8 @@
 Changelog for package rviz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2014-12-05)
+------------------
 * Fix crashes for all plugins inheriting from MessageFilter
 * Merge pull request `#809 <https://github.com/clearpathrobotics/rviz/issues/809>`_ from ros-visualization/fix-invalid-read
   Fixed read off end of array in triangle_list_marker.
