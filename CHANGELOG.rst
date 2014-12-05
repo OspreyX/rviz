@@ -2,6 +2,24 @@
 Changelog for package rviz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix crashes for all plugins inheriting from MessageFilter
+* Merge pull request `#809 <https://github.com/clearpathrobotics/rviz/issues/809>`_ from ros-visualization/fix-invalid-read
+  Fixed read off end of array in triangle_list_marker.
+* Merge pull request `#817 <https://github.com/clearpathrobotics/rviz/issues/817>`_ from abencz/hydro-devel
+  Update map via QT signal instead of in ros thread
+* Update map via QT signal instead of in ros thread
+  Resolved issues when running RViz in rqt where the incomingMap callback
+  is not issued from RViz's main QThread causing a crash in Ogre. Map
+  updates are now handled by emitting a signal to update the map from the
+  callback thread.
+* Fixed read off end of array in triangle_list_marker.
+* Merge pull request `#800 <https://github.com/clearpathrobotics/rviz/issues/800>`_ from bcharrow/hydro-devel
+  Fix add by topic for Marker and MarkerArray
+* Fix add by topic for Marker and MarkerArray
+* Contributors: Alex Bencz, Ben Charrow, Dave Hershberger, William Woodall
+
 1.10.18 (2014-07-29)
 --------------------
 * Backport fix from Indigo for a warning which fails on the farm.
